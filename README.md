@@ -4,12 +4,16 @@
 ***Clone this folder into your home folder***
 ---
 Paste this code into your .bashrc file for the aliases to work
-`if [ -f ./Scripts/.bash_aliases ]; then
+```
+if [ -f ./Scripts/.bash_aliases ]; then
     . ./Scripts/.bash_aliases
-fi`
+fi
+```
 ---
 To use each script, remember to edit permissions with
-`chmod +x ./Scripts/[NAME-OF-SCRIPT].sh`
+```
+chmod +x ./Scripts/[NAME-OF-SCRIPT].sh
+```
 ---
 ## Credits
 
