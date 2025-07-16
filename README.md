@@ -1,6 +1,6 @@
 # MY SCRIPTS!!!!
 ### a backup for the scripts and optimizations I made to my machine
-**Tested on Linux Mint with Cinnamon 22.1 DE**
+**Tested on Linux Mint with Cinnamon 22.1 DE**\
 ***Clone this folder into your home folder***
 ---
 Paste this code into your .bashrc file for the aliases to work
