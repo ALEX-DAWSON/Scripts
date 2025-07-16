@@ -11,14 +11,11 @@ TITLE=$(echo "$SPOTIFY_STATUS" | grep -A 1 "xesam:title" | tail -1 | cut -d '"' 
 if [[ -z "$TITLE" ]]; then
   echo "Spotify is closed."
 else
-  echo "$ARTIST"
-  echo "$TITLE"
+  echo "$ARTIST - $TITLE"
+  
 fi
 
 # To use this, edit system permissions using the command 
-#     "chmod +x ./Scripts/grab-np.sh"
-# Then run in terminal using either
-#     "./Scripts/grab-np.sh"
-# or
-#     "now-playing"
-# using the preset alias in ".bash_aliases"
+#     "chmod +x ./Scripts/one-line-np.sh"
+# Then run in terminal using 
+#     "./Scripts/one-line-np.sh"
