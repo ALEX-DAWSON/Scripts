@@ -14,5 +14,14 @@
 alias sysinfo='inxi -Fxxxpmrz'
 alias sysreport='inxi -Fxa > ~/Desktop/System-Report.txt'
 
+#Shortcuts
+alias bonsai='cbonsai -i -l'
+
 # Aliases for custom scripts
 alias now-playing='source ./Scripts/grab-np.sh'
+
+
+# Dependencies on lolcat
+alias lolbonsai='cbonsai -i -l | lolcat'
+alias lolpipes='pipes | lolcat'
+alias lolmatrix='cmatrix | lolcat'
