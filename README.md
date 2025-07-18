@@ -3,13 +3,13 @@
 **Tested on Linux Mint with Cinnamon 22.1 DE**\
 ***Clone this folder into your home folder***
 ---
-***My Hello Script***
+***My Hello Script***\
 ![Hello Script](./images/hello-script.png)
 
-***Now Playing Status Bar Script***
+***Now Playing Status Bar Script***\
 ![Spotify Now Playing](./images/one-line-np.png)
 
-***Mod to cmatrix using lolcat called lolmatrix***
+***Mod to cmatrix using lolcat called lolmatrix***\
 ![lolmatrix](./images/lolmatrix.png)
 
 Paste this code into your .bashrc file for the aliases to work
