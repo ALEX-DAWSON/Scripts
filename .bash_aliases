@@ -17,6 +17,8 @@ alias sysreport='inxi -Fxa > ~/Desktop/System-Report.txt'
 #Shortcuts
 alias bonsai='cbonsai -i -l'
 
+alias givexperm='cd Scripts && chmod +x ./update.sh && chmod +x ./first-script.sh && chmod +x ./grab-np.sh && chmod +x ./one-line-np.sh && cd'
+
 # Aliases for custom scripts
 alias now-playing='source ./Scripts/grab-np.sh'
 
@@ -26,3 +28,27 @@ alias lolbonsai='cbonsai -i -l | lolcat'
 alias lolpipes='pipes | lolcat'
 alias lolmatrix='cmatrix | lolcat'
 alias lolfetch='neofetch | lolcat'
+
+# Colour Variables
+# Reset
+nc='\033[0m'              # Text Reset
+
+# Regular Colors
+black='\033[0;30m'        # Black
+red='\033[0;31m'          # Red
+green='\033[0;32m'        # Green
+yellow='\033[0;33m'       # Yellow
+blue='\033[0;34m'         # Blue
+purple='\033[0;35m'       # Purple
+cyan='\033[0;36m'         # Cyan
+white='\033[0;37m'        # White
+
+# Background
+on_black='\033[40m'       # Black
+on_red='\033[41m'         # Red
+on_green='\033[42m'       # Green
+on_yellow='\033[43m'      # Yellow
+on_blue='\033[44m'        # Blue
+on_purple='\033[45m'      # Purple
+on_cyan='\033[46m'        # Cyan
+on_white='\033[47m'       # White
