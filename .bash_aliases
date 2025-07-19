@@ -17,11 +17,8 @@ alias sysreport='inxi -Fxa > ~/Desktop/System-Report.txt'
 #Shortcuts
 alias bonsai='cbonsai -i -l'
 
-alias givexperm='cd Scripts && chmod +x ./update.sh && chmod +x ./first-script.sh && chmod +x ./grab-np.sh && chmod +x ./one-line-np.sh && cd'
-
-# Aliases for custom scripts
-alias now-playing='source ./Scripts/grab-np.sh'
-
+alias givexperm='chmod +x ~/Scripts/*.sh'
+alias addcow='sudo cp ~/Scripts/ascii/*.cow /usr/share/cowsay/cows'
 
 # Dependencies on lolcat
 alias lolbonsai='cbonsai -i -l | lolcat'

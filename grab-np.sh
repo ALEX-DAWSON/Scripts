@@ -19,6 +19,3 @@ fi
 #     "chmod +x ./Scripts/grab-np.sh"
 # Then run in terminal using either
 #     "./Scripts/grab-np.sh"
-# or
-#     "now-playing"
-# using the preset alias in ".bash_aliases"
