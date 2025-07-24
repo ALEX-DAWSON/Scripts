@@ -3,7 +3,7 @@ hello () {
 
 name=$1
 
-filling="Hello ${name} \n Today is $(date | awk '{print $3 " " $2 " " $4}') \n Your fortune for today is: \n $(fortune)"
+filling="Hello ${name} \n Today is $(date "+%b %e %Y") \n Your fortune for today is: \n $(fortune)"
 
 ginny() {
     clear
