@@ -20,6 +20,13 @@ alias bonsai='cbonsai -i -l'
 alias givexperm='chmod +x ~/Scripts/*.sh'
 alias addcow='sudo cp ~/Scripts/ascii/*.cow /usr/share/cowsay/cows'
 
+if [ "pacman -Q | grep wikiman" ] || [ "dpkg -l | grep wikiman" ]; then
+    alias man='wikiman'
+    echo "man command now opens wikiman"
+else
+    echo "Did not find wikiman"
+fi
+
 # Dependencies on lolcat
 alias lolbonsai='cbonsai -i -l | lolcat'
 alias lolpipes='pipes | lolcat'
