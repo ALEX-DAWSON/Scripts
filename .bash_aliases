@@ -20,12 +20,28 @@ alias bonsai='cbonsai -i -l'
 alias givexperm='chmod +x ~/Scripts/*.sh'
 alias addcow='sudo cp ~/Scripts/ascii/*.cow /usr/share/cowsay/cows'
 
-# if [ "pacman -Q | grep wikiman" != "" ] || [ "dpkg -l | grep wikiman" != "" ]; then
-#     alias man='wikiman'
-#     echo "man command now opens wikiman"
-# else
-#     echo "Did not find wikiman"
-# fi
+
+#Search what distro family is being used and set appropriate varriables
+release_file=/etc/os-release
+
+if grep -qi "arch" $release_file
+then
+    package_manager="pacman"
+    package_search="pacman -Q"
+
+elif grep -qi "debian" $release_file
+then
+    package_manager="apt"
+    package_search="dpkg -l"
+fi
+
+#If wikiman is installed on system, then replace the man command for wikiman
+if [ $($package_search | grep -c wikiman) -gt 0 ]; then
+    alias man='wikiman'
+    echo "man command now opens wikiman"
+else
+    echo "Did not find wikiman"
+fi
 
 # Dependencies on lolcat
 alias lolbonsai='cbonsai -i -l | lolcat'
