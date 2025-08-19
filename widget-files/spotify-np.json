@@ -36,7 +36,7 @@
         "default": "echo 'hello, cinnamon!'",
         "description": "Command 1",
         "tooltip": "first line of output (use \\f for more lines)",
-        "value": "./Scripts/one-line-np.sh"
+        "value": "./Scripts/grab-np.sh 1"
     },
     "enableScript2": {
         "type": "checkbox",
@@ -84,7 +84,7 @@
         "default": "Bash sensors!",
         "description": "Tooltip command or static tooltip text",
         "tooltip": "tooltip (static or dynamic)",
-        "value": "./Scripts/grab-np.sh"
+        "value": "./Scripts/grab-np.sh 2"
     },
     "head4": {
         "type": "header",
@@ -95,13 +95,13 @@
         "default": "sensors",
         "description": "Menu command (on applet left-click)",
         "tooltip": "allows to display lots of information in popup menu",
-        "value": "./Scripts/grab-np.sh"
+        "value": ""
     },
     "menuScriptDisplay": {
         "type": "checkbox",
         "default": true,
         "description": "Display output of menu command",
-        "value": true
+        "value": false
     },
     "head5": {
         "type": "header",
