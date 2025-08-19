@@ -1,21 +1,43 @@
 #!/bin/bash
 
 # Get the current playing song from Spotify using dbus
-SPOTIFY_STATUS=$(dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify \
+info=$(dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify \
 /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get \
 string:"org.mpris.MediaPlayer2.Player" string:"Metadata")
 
-ARTIST=$(echo "$SPOTIFY_STATUS" | grep -A 2 "xesam:artist" | tail -1 | cut -d '"' -f 2)
-TITLE=$(echo "$SPOTIFY_STATUS" | grep -A 1 "xesam:title" | tail -1 | cut -d '"' -f 2)
+status=$(playerctl -p spotify status)
+artist=$(echo "$info" | grep -A 2 "xesam:artist" | tail -1 | cut -d '"' -f 2)
+title=$(echo "$info" | grep -A 1 "xesam:title" | tail -1 | cut -d '"' -f 2)
 
-if [[ -z "$TITLE" ]]; then
-  echo "Spotify is closed."
-else
-  echo "$ARTIST"
-  echo "$TITLE"
-fi
+twolines() {
+if [[ -z "$title" ]]; then
+    echo "Spotify is closed."
+  else
+    echo "$artist"
+    echo "$title"
+  fi
+}
 
-# To use this, edit system permissions using the command 
-#     "chmod +x ./Scripts/grab-np.sh"
-# Then run in terminal using either
-#     "./Scripts/grab-np.sh"
+oneline() {
+if [[ -z "$title" ]]; then
+    echo "Spotify is closed."
+  else
+    echo "$artist - $title"
+  fi
+}
+
+play() {
+  if [[ -z "$status" ]]; then
+    echo "󰓛"
+  elif [ "$status" == "Paused" ]; then
+    echo "󰐊"
+  elif [ "$status" == "Playing" ]; then
+    echo "󰏤"
+  fi
+}
+
+case $1 in
+  1) oneline ;;
+  2) twolines ;;
+  play) play ;;
+esac
