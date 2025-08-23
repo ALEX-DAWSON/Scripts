@@ -9,9 +9,11 @@ status=$(playerctl -p spotify status)
 artist=$(echo "$info" | grep -A 2 "xesam:artist" | tail -1 | cut -d '"' -f 2)
 title=$(echo "$info" | grep -A 1 "xesam:title" | tail -1 | cut -d '"' -f 2)
 
+close_message="Spotify is closed."
+
 twolines() {
-if [[ -z "$title" ]]; then
-    echo "Spotify is closed."
+if [[ -z "$info" ]]; then
+    echo ""
   else
     echo "$artist"
     echo "$title"
@@ -19,12 +21,16 @@ if [[ -z "$title" ]]; then
 }
 
 oneline() {
-if [[ -z "$title" ]]; then
-    echo "Spotify is closed."
+if [[ -z "$info" ]]; then
+    echo $close_message
   else
     echo "$artist - $title"
   fi
 }
+
+# json() {
+
+# }
 
 play() {
   if [[ -z "$status" ]]; then
@@ -40,4 +46,5 @@ case $1 in
   1) oneline ;;
   2) twolines ;;
   play) play ;;
+  auto-refresh) auto-refresh ;;
 esac
